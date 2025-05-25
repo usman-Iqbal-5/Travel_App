@@ -164,7 +164,7 @@ public class MyController implements Controller {
 
 
        // add a title to the result string to indicate the order of the shortest travel path
-        result.append("Oder of the shortest travel path: \n");
+        result.append("Order of the shortest travel path: \n");
 
 
         // Iterate through the priority queue and add the shortest travel path in the correct order

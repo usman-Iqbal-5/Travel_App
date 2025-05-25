@@ -6,25 +6,22 @@ import java.awt.*;
 import java.util.Arrays;
 
 /**
- * A simple GUI-based user interface for my Prototype Travel system.
- * Replaces the original text-based interface with a Swing GUI.
- *
- * Provides interactive buttons for users to utilise travel-related features
- * from the Controller interface and displays results User-friendly format.
+ * GUI class provides a simple graphical user interface for the Travel_App.
+ * It is designed to be user-friendly, simple and intuitive.
  *
  * @author Usman
  */
 public class GUI {
 
 	/**
-	 * The Controller interface instance used to delegate travel system operations.
+	 * Controller interface instance to deal with the operations.
 	 */
 	private Controller controller;
 
 	/**
-	 * Constructs a TUI with a given Controller and launches the GUI.
+	 * GUI constructor - provides the controller and initialises the GUI components.
 	 *
-	 * @param controller The Controller instance providing application logic.
+	 * @param controller Controller instance providing backend travel logic.
 	 */
 	public GUI(Controller controller) {
 		this.controller = controller;
@@ -32,29 +29,41 @@ public class GUI {
 	}
 
 	/**
-	 * Creates and displays the GUI frame containing buttons and output area.
-	 * Sets up event listeners for buttons to perform travel-related actions.
+	 * Creates and displays the main GUI window with buttons and output area.
+	 * Sets up action listeners on buttons to deal with the functionality.
 	 */
 	private void createAndShowGUI() {
-		JFrame frame = new JFrame("Usman's Travel App");
+		JFrame frame = new JFrame("Travel App");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(700, 500);
+		frame.setSize(800, 500);
 		frame.setLocationRelativeTo(null);
 
-		// Text area for displaying results, set to monospaced font for better alignment
+		// Displays the welcome label at the top
+		JLabel welcomeLabel = new JLabel("Travel App", SwingConstants.CENTER);
+		welcomeLabel.setFont(new Font("SansSerif", Font.BOLD, 24));
+		welcomeLabel.setBorder(new EmptyBorder(15, 0, 15, 0));
+
+		// Text area for displaying output and help with the layout alignment
 		JTextArea outputArea = new JTextArea();
 		outputArea.setEditable(false);
 		outputArea.setFont(new Font("Monospaced", Font.PLAIN, 13));
+		outputArea.setMargin(new Insets(0, 10, 10, 10));
+		outputArea.setText("Welcome to Travel App!\n\nGet to your locations more quickly and efficiently!");
 		JScrollPane scrollPane = new JScrollPane(outputArea);
 
-		// Create buttons for menu options
+		// Panel containing the output text area
+		JPanel outputPanel = new JPanel(new BorderLayout());
+		outputPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		outputPanel.add(scrollPane, BorderLayout.CENTER);
+
+		// Buttons for each travel function
 		JButton btnListDestinations = new JButton("1. List Destination(s)");
 		JButton btnNearby = new JButton("2. Nearby Destinations");
 		JButton btnDistances = new JButton("3. List Distances");
 		JButton btnShortestPath = new JButton("4. Shortest Travel Path");
 		JButton btnExit = new JButton("5. Exit");
 
-		// Arrange buttons vertically with spacing
+		// Panel to deal with the layout of the buttons
 		JPanel buttonPanel = new JPanel(new GridLayout(5, 1, 10, 10));
 		buttonPanel.add(btnListDestinations);
 		buttonPanel.add(btnNearby);
@@ -62,20 +71,21 @@ public class GUI {
 		buttonPanel.add(btnShortestPath);
 		buttonPanel.add(btnExit);
 
-		// Add padding around buttons panel to separate from text area visually
-		JPanel paddedButtonPanel = new JPanel(new BorderLayout());
-		paddedButtonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		paddedButtonPanel.add(buttonPanel, BorderLayout.CENTER);
+		// Container panel for buttons with fixed width and padding
+		JPanel buttonContainer = new JPanel(new BorderLayout());
+		buttonContainer.setPreferredSize(new Dimension(220, 0));
+		buttonContainer.setBorder(new EmptyBorder(10, 10, 10, 10));
+		buttonContainer.add(buttonPanel, BorderLayout.NORTH);
 
-		// Layout the main frame with buttons on the left and output area on the right
+		// Set up the main frame layout: welcome label top, buttons left, text-oupt in the centre
 		frame.setLayout(new BorderLayout());
-		frame.add(paddedButtonPanel, BorderLayout.WEST);
-		frame.add(scrollPane, BorderLayout.CENTER);
+		frame.add(welcomeLabel, BorderLayout.NORTH);
+		frame.add(buttonContainer, BorderLayout.WEST);
+		frame.add(outputPanel, BorderLayout.CENTER);
 
 		/*
-		 * Button 1: List Destinations
-		 * Prompts user for a city name or 'all' to list all destinations.
-		 * Displays the result in the text area.
+		 * Action listener for "List Destination(s)"
+		 * Prompts the user to enter a city or 'all' and displays matching destinations.
 		 */
 		btnListDestinations.addActionListener(e -> {
 			String city = JOptionPane.showInputDialog(frame,
@@ -87,9 +97,8 @@ public class GUI {
 		});
 
 		/*
-		 * Button 2: Nearby Destinations
-		 * Prompts user for latitude, longitude, and range.
-		 * Displays nearby destinations within the specified range.
+		 * Action listener for "Nearby Destinations"
+		 * Prompts user for latitude, longitude, and range to find nearby destinations.
 		 */
 		btnNearby.addActionListener(e -> {
 			try {
@@ -111,8 +120,8 @@ public class GUI {
 		});
 
 		/*
-		 * Button 3: List Distances
-		 * Shows distances between all pairs of destinations.
+		 * Action listener for "List Distances"
+		 * Displays distances between all pairs of destinations.
 		 */
 		btnDistances.addActionListener(e -> {
 			outputArea.setText("List and store the distances between destinations:\n\n");
@@ -120,9 +129,9 @@ public class GUI {
 		});
 
 		/*
-		 * Button 4: Shortest Travel Path
-		 * Prompts user to enter a list of city names separated by commas.
-		 * Calculates and displays the shortest travel path covering the listed cities.
+		 * Action listener for "Shortest Travel Path"
+		 * Prompts for multiple city names separated by commas,
+		 * then calculates and displays the shortest travel path.
 		 */
 		btnShortestPath.addActionListener(e -> {
 			String input = JOptionPane.showInputDialog(frame,
@@ -146,15 +155,16 @@ public class GUI {
 		});
 
 		/*
-		 * Button 5: Exit
-		 * Shows a goodbye message and closes the application.
+		 * Action listener for "Exit"
+		 * Displays goodbye message and terminates the application.
 		 */
 		btnExit.addActionListener(e -> {
-			JOptionPane.showMessageDialog(frame, "Goodbye!");
+			JOptionPane.showMessageDialog(frame, "Goodbye! Thanks for using the Travel App.");
 			System.exit(0);
 		});
 
-		// Display the GUI frame
+		// Show the GUI window
 		frame.setVisible(true);
 	}
 }
+

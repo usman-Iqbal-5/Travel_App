@@ -45,9 +45,14 @@ The application models destination cities as nodes in a weighted graph, where ed
 
 ![Nearby Destinations](images/Nearby-Destinations.png)
 
-### Shortest path calculation result
+### List shortest distances
 
-![Shortest Path](images/Shortest-Travel-Path.png)
+![Shortest Path from each location](images/List_destinations_travel-app.png)
+
+### Exiting the Travel App
+
+![Exiting the app](images/Exit.png)
+
 
 
 ## Getting Started

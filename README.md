@@ -55,7 +55,7 @@ The application models destination cities as nodes in a weighted graph, where ed
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/Travel_App.git
+   git clone https://github.com/usman-Iqbal-5/Travel_App.git
    ```
 2. **Open the project in your Java IDE (e.g., Eclipse, IntelliJ).**
 3. **Compile and run the `Main` class to launch the GUI.**

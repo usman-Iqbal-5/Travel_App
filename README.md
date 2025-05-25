@@ -41,7 +41,7 @@ The application models destination cities as nodes in a weighted graph, where ed
 ![All_destinations_page](images/List_destinations_travel-app.png)
 
 
-### Nearby destinations query
+### Nearby destinations
 
 ![Nearby Destinations](images/Nearby-Destinations.png)
 

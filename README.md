@@ -1,6 +1,6 @@
 # ✈️ Prototype Travel App
 
-A Java-based travel planning prototype that helps users explore destinations, calculate distances, and discover optimized travel routes between cities. Built using **object-oriented programming**, **custom data structures**, and **graph algorithms**, the app demonstrates practical use of **weighted graphs** and **Dijkstra’s algorithm** for solving real-world optimisation problems.
+A Java-based travel planning prototype that helps users explore destinations, calculate distances, and discover optimised travel routes between cities. Built using **object-oriented programming**, **custom data structures**, and **graph algorithms**, the app demonstrates practical use of **weighted graphs** and **Dijkstra’s algorithm** for solving real-world optimisation problems.
 
 ---
 

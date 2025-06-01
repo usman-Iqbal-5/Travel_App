@@ -1,75 +1,95 @@
-# Prototype Travel App
+# ✈️ Prototype Travel App
 
-The prototype Travel App is a Java-based travel planning application designed to help users explore destinations, calculate distances, and find optimised travel routes between cities. Built using object-oriented programming principles, custom data structures, and advanced algorithms, this app showcases practical applications of weighted graphs and Dijkstra's algorithm to solve real-world optimisation problems.
+A Java-based travel planning prototype that helps users explore destinations, calculate distances, and discover optimized travel routes between cities. Built using **object-oriented programming**, **custom data structures**, and **graph algorithms**, the app demonstrates practical use of **weighted graphs** and **Dijkstra’s algorithm** for solving real-world optimisation problems.
 
-## Features
+---
 
-* **List Destinations:** View information about all destination cities or search for specific cities.
-* **Nearby Destinations:** Find cities within a specified distance radius from given coordinates.
-* **Distance Calculation:** Compute and store distances between any two destinations using a weighted graph.
-* **Shortest Travel Path:** Calculate the shortest travel route covering a list of user-selected cities using Dijkstra's algorithm.
-* **Interactive GUI:** User-friendly Swing-based interface for intuitive interaction and clear output visualization.
+## 🚀 Features
 
-## Technologies Used
+* 📍 **List Destinations** – View all cities or search specific destinations by name.
+* 🧭 **Nearby Locations** – Discover cities within a user-defined radius from selected coordinates.
+* 📏 **Distance Calculator** – Compute and store distances between cities using a weighted graph model.
+* 🔀 **Shortest Travel Path** – Generate the shortest route through selected destinations via **Dijkstra’s Algorithm**.
+* 🖥️ **User-Friendly GUI** – Interactive Swing-based interface for smooth user experience and clear result display.
 
-* **Java** - Core programming language leveraging OOP concepts.
-* **Swing** - For building the graphical user interface.
-* **Custom Data Structures** - Implemented weighted graphs to model city connections and distances.
-* **Algorithms** - Developed and applied Dijkstra's algorithm for shortest path computations.
+---
 
-## Project Structure
+## 🛠️ Technologies Used
 
-* `Travel_App` package contains core classes including:
+* **Java** – Core application logic built with Object-Oriented Programming principles.
+* **Swing** – Used to develop the interactive GUI.
+* **Custom Data Structures** – Graph and node structures designed from scratch to model city networks.
+* **Algorithms** – Implemented **Dijkstra’s algorithm** for path optimisation.
 
-  * **Controller Interface:** Defines operations available in the travel system.
-  * **GUI:** GUI wrapper class providing menu-driven user interaction.
-  * **Graph & Node Classes:** Represent the weighted graph data structure.
-  * **Logic Classes:** Implements logic, algorithms and other helper methods.
+---
 
-## How It Works
+## 🗂️ Project Structure
 
-The application models destination cities as nodes in a weighted graph, where edges represent distances between cities. Using this graph, the app can efficiently compute shortest paths and optimise travel routes based on user inputs. The GUI enables users to easily input queries and view results, making it practical for testing and demonstration purposes.
+The `Travel_App` package includes the following core components:
 
-## Screenshots
+* **Controller Interface** – Defines core operations available in the system.
+* **GUI Class** – Handles user interaction and display via a menu-driven interface.
+* **Graph & Node Classes** – Represent the weighted graph structure and individual cities.
+* **Logic classes** – Implement routing logic, distance calculations, and helper utilities.
 
-### Main GUI with menu buttons and output area
-![Main_page](images/Travel-app-main-screen.png)
+---
 
+## ⚙️ How It Works
 
-### Listing all destinations
+The app models destination cities as **nodes** in a **weighted graph**, where **edges** represent the distances between them. Users can calculate the shortest paths, explore nearby cities, and view travel details interactively. The system uses **Dijkstra’s algorithm** to perform fast and efficient pathfinding.
 
-![All_destinations_page](images/List_destinations_travel-app.png)
+---
 
+## 🖼️ Screenshots
 
-### Nearby destinations
+### 🏠 Main GUI
 
-![Nearby Destinations](images/Nearby-Destinations.png)
+<img src="images/Travel-app-main-screen.png" alt="Main Page" width="600"/>
 
-### List shortest distances
+### 🌍 List All Destinations
 
-![Shortest Path from each location](images/List_destinations_travel-app.png)
+<img src="images/List_destinations_travel-app.png" alt="List All Destinations" width="600"/>
 
-### Exiting the Travel App
+### 📍 Nearby Destinations
 
-![Exiting the app](images/Exit.png)
+<img src="images/Nearby-Destinations.png" alt="Nearby Destinations" width="600"/>
 
+### 🔀 Shortest Paths
 
+<img src="images/List_destinations_travel-app.png" alt="Shortest Paths" width="600"/>
 
-## Getting Started
+### ❌ Exiting the App
 
-1. **Clone the repository**
+<img src="images/Exit.png" alt="Exit App" width="600"/>
+
+---
+
+## 🧑‍💻 Getting Started
+
+1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/usman-Iqbal-5/Travel_App.git
    ```
-2. **Open the project in your Java IDE (e.g., Eclipse, IntelliJ).**
-3. **Compile and run the `Main` class to launch the GUI.**
-4. **Interact with the app through the GUI buttons to explore its features.**
 
-## Future Improvements
+2. **Open the project** in your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse).
 
-* Integrate real-world map APIs for geolocation and mapping.
-* Add user account support and travel history saving.
-* Implement additional optimisation algorithms (e.g., traveling salesman heuristics).
-* Enhance UI with richer visuals and responsive design.
+3. **Compile and run** the `Main` class to launch the graphical interface.
+
+4. **Interact with the app** using the menu options to access its features.
+
+---
+
+## 🔮 Future Enhancements
+
+* 🌐 Integration with real-world map APIs for geolocation and route visualisation.
+* 👤 User login and profile-based travel history.
+* 🧠 Incorporate additional algorithms (e.g., **TSP heuristics** for complex routing).
+* 🎨 Improved UI with modern design elements and responsiveness.
+
+---
+
+## ℹ️ Disclaimer
+
+This application was developed as a **learning prototype** and is intended for **demonstration purposes only**. Not meant for production use or distribution.
 

@@ -64,7 +64,7 @@ The app models destination cities as **nodes** in a **weighted graph**, where **
 
 ---
 
-## 🚀 Getting Started
+## 💼  Getting Started
 
 1. **Clone the repository:**
 

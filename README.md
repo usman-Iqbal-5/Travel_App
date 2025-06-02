@@ -48,7 +48,7 @@ The app models destination cities as **nodes** in a **weighted graph**, where **
 
 ### 🌍 List All Destinations
 
-<img src="images/List_destinations_travel-app.png" alt="List All Destinations" width="600"/>
+<img src="images/List-Distances.png" alt="List All Destinations" width="600"/>
 
 ### 📍 Nearby Destinations
 
@@ -56,7 +56,7 @@ The app models destination cities as **nodes** in a **weighted graph**, where **
 
 ### 🔀 Shortest Paths
 
-<img src="images/List-Distances.png" alt="Shortest Paths" width="600"/>
+<img src="images/List_destinations_travel-app.png " alt="Shortest Paths" width="600"/>
 
 ### ❌ Exiting the App
 
